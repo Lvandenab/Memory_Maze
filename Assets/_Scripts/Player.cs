@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor;
 using UnityEngine;
 
 public class Player : MonoBehaviour
@@ -8,6 +7,10 @@ public class Player : MonoBehaviour
     public float speed = 3.0f;
     public int health = 3;
     public GameObject win;
+    public GameObject lose;
+    public GameObject blood;
+    public Transform player;
+    public GameObject Heart1,Heart2,Heart3;
 
     
     // Start is called before the first frame update
@@ -18,6 +21,13 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (health <= 0)
+        {
+            lose.SetActive(true);
+            Time.timeScale = 0.0f;
+
+        }
+
         if (Input.GetKey(KeyCode.W))
         {
             transform.position += Vector3.up * speed * Time.deltaTime;
@@ -34,10 +44,6 @@ public class Player : MonoBehaviour
         {
             transform.position += Vector3.right * speed * Time.deltaTime;
         }
-        /*if (health <=0)
-        {
-            Time.timeScale = 0.0f;
-        }*/
         
     }
     private void OnTriggerEnter2D(Collider2D other)
@@ -49,7 +55,21 @@ public class Player : MonoBehaviour
         else if (other.gameObject.CompareTag("Enemy"))
         {
             Debug.Log("damage");
+            Instantiate(blood, player.position, player.rotation);
             health--;
+            if (health == 2)
+            {
+                Destroy(Heart1);
+            }
+            else if (health == 1)
+            {
+                Destroy(Heart2);
+            }
+            else if (health == 0)
+            {
+                Destroy(Heart3);
+            }
+
         }
         else if (other.gameObject.CompareTag("End"))
         {
