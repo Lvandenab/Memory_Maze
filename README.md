@@ -10,15 +10,16 @@
 ---
 
 # Required ReadMe Info for ALL MCS1653 Projects
-* **Project**   - 
-* **Your Name** - 
+* **Project**   - Puzzle
+* **Your Name** - Lucas Vandenabeele
 * **Date**      - 
 
 <br>
 
 1. **What are the controls to your game? How do we play?**
 
-
+WASD - Movement
+ESC - Pause
 
 <br>
 
@@ -36,6 +37,8 @@
 
 4. **Did you receive help from anyone outside this class?** <br> (list their names and what they helped with)
 
+https://unsplash.com/photos/a-pink-rose-on-a-bush-zsUUbnQOzI0
+https://unsplash.com/photos/green-plant-field-under-white-sky-during-daytime-aEcF58jG1n4
 
 
 <br>
